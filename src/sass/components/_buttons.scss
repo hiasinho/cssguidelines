@@ -1,0 +1,113 @@
+// Buttons
+//
+// .c-btn--primary - Primary
+// .c-btn--secondary - Secondary
+//
+// Markup:
+// <a class="c-btn {{modifier_class}}" href="#">Button</a>
+// <a class="c-btn {{modifier_class}} pseudo-class-hover" href="#">Hover</a>
+// <a class="c-btn {{modifier_class}} pseudo-class-active" href="#">Active</a>
+// <a class="c-btn {{modifier_class}} pseudo-class-focus" href="#">Focus</a>
+//
+// Weight: 1
+//
+// Styleguide Components - Buttons
+
+
+// @mixin: strat-btn-style
+//
+// A mixin to set color variants for buttons.
+//
+// Example usage:
+//
+// <code>@include strat-btn-style(white, black);</code>
+//
+// $background - Background color
+// $text       - Text color
+//
+// Weight: 0
+//
+// Styleguide Components - Buttons - strat-btn-style
+
+@mixin strat-btn-style($background, $text: #fff) {
+  background-color: $background;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none; /* [4] */
+    color: $text;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: darken($background, 10%);
+  }
+}
+
+// 1. Allow us to style box model properties.
+// 2. Line different sized buttons up a little nicer.
+// 3. Make buttons inherit font styles (often necessary when styling `input`s as
+//    buttons).
+// 4. Reset/normalize some styles.
+// 5. Force all button-styled elements to appear clickable.
+
+.c-btn {
+  display: inline-block; /* [1] */
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  padding: $spacing-unit-small $spacing-unit;
+  transition: $global-transition;
+  border-radius: $global-radius;
+  @include strat-btn-style(#777);
+}
+
+
+
+
+
+// Style variants
+// =============================================================================
+
+.c-btn--primary {
+  @include strat-btn-style(lighten(green, 40%));
+}
+
+.c-btn--secondary {
+  @include strat-btn-style(lighten(red, 30%));
+}
+
+
+
+
+
+// Size variants
+//
+// .c-btn--tiny - Primary
+// .c-btn--small - Primary Hover
+// .c-btn--large - Secondary
+// .c-btn--huge - Secondary Hover
+//
+// Markup:
+// <a class="c-btn {{modifier_class}}" href="#">Button</a>
+//
+// Weight: 2
+//
+// Styleguide Components - Buttons - Sizing
+
+.c-btn--tiny {
+  padding: 0 $spacing-unit-tiny;
+  @include strat-font-size(10px);
+}
+
+.c-btn--small {
+  padding: $spacing-unit-tiny $spacing-unit-small;
+}
+
+.c-btn--large {
+  padding: $spacing-unit $spacing-unit-large;
+}

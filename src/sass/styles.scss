@@ -1,0 +1,102 @@
+// Settings
+//
+// These are Settings
+//
+// Weight: -3
+//
+// Styleguide Settings
+
+@import "settings/config";
+@import "settings/core";
+@import "settings/global";
+
+
+
+// Tools
+//
+// These are Tools
+//
+// Weight: -2
+//
+// No styleguide reference.
+
+@import "tools/font-size";
+@import "tools/clearfix";
+@import "tools/hidden";
+@import "~sass-mq/mq";
+
+
+
+
+
+// Generic
+//
+// These are Generic
+//
+// Weight: -1
+//
+// No styleguide reference.
+
+@import "generic/box-sizing";
+@import "generic/normalize";
+@import "generic/reset";
+@import "generic/shared";
+
+
+
+
+
+// Elements
+//
+// These are Elements
+//
+// Weight: 0
+//
+// Styleguide Elements
+
+@import 'elements/page';
+
+
+
+
+
+// Objects
+//
+// These are Objects
+//
+// Weight: 1
+//
+// Styleguide Objects
+
+@import "objects/wrapper";
+@import "objects/layout";
+
+
+
+
+
+// Components
+//
+// These are components
+//
+// Weight: 2
+//
+// Styleguide Components
+
+@import 'components/buttons';
+@import 'components/stickies';
+
+
+
+
+
+// Utilities
+//
+// These are Utilities
+//
+// Weight: 3
+//
+// Styleguide Utilities
+
+@import 'utilities/spacings';
+@import 'utilities/widths';

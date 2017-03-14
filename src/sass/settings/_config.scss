@@ -1,0 +1,30 @@
+// Configuration
+//
+// A map of global config settings. Define any project-level configuration,
+// feature switches, etc. in here.
+//
+// Weight: 0
+//
+// Styleguide Settings - Config
+
+$strat-config: (
+  env: dev,
+  healthcheck: false,
+  debug: true,
+);
+
+// strat-config($key)
+//
+// You can access data in this map using this function.
+//
+// Example usage:
+//
+// @if (strat-config(debug) == true) { ...  }
+//
+// $key - Key of the config var.
+//
+// Styleguide Settings - Config - strat-config
+
+@function strat-config($key) {
+  @return map-get($strat-config, $key);
+}

@@ -1,0 +1,111 @@
+// Spacings
+//
+// Utility classes to put specific spacing values onto elements. The below loop
+// will generate us a suite of classes like:
+//
+// Weight: 1
+//
+// Styleguide Utilities - Spacings
+
+$inuit-spacing-directions: (
+  null: null,
+  '-top': '-top',
+  '-right': '-right',
+  '-bottom': '-bottom',
+  '-left': '-left',
+  '-horizontal': '-left' '-right',
+  '-vertical': '-top' '-bottom',
+) !default;
+
+$inuit-spacing-sizes: (
+  null: $spacing-unit,
+  '-tiny': $spacing-unit-tiny,
+  '-small': $spacing-unit-small,
+  '-large': $spacing-unit-large,
+  '-huge': $spacing-unit-huge,
+  '-none': 0
+) !default;
+
+
+
+
+
+// @mixin: strat-spacing
+//
+// A mixin to spit out our spacing classes. Pass in the property we want the spacings
+// to have, and a namespace.
+//
+// Example usage:
+//
+// <code>@include strat-spacing('padding', 'nudge');</code>
+//
+// $property  - Name of the property to be set
+// $namespace - Name of the classes
+//
+// Styleguide Utilities - Spacings - strat-spacing
+
+@mixin strat-spacing($property, $namespace) {
+
+  @each $direction-namespace, $direction-rules in $inuit-spacing-directions {
+
+    @each $size-namespace, $size in $inuit-spacing-sizes {
+
+      .u-#{$namespace}#{$direction-namespace}#{$size-namespace} {
+
+        @each $direction in $direction-rules {
+          #{$property}#{$direction}: $size !important;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+// Margins
+//
+// .u-margin-top - Add Text
+// .u-margin-right - Add Text
+// .u-margin-bottom - Add Text
+// .u-margin-left - Add Text
+// .u-margin-horizontal - Add Text
+// .u-margin-vertical - Add Text
+//
+// Markup:
+// <div style="background-color: #ccc; display: inline-block; width: 100%;">
+//   <div class="{{modifier_class}}" style="border: 1px solid black; background-color: #fff;">
+//     Lorem ipsum
+//   </div>
+// </div>
+//
+// Weight: 1
+//
+// Styleguide Utilities - Spacings - Margins
+
+@include strat-spacing('margin', 'margin');
+
+
+
+
+
+// Paddings
+//
+// .u-padding-top - Add Text
+// .u-padding-right - Add Text
+// .u-padding-bottom - Add Text
+// .u-padding-left - Add Text
+// .u-padding-horizontal - Add Text
+// .u-padding-vertical - Add Text
+//
+// Markup:
+// <div class="{{modifier_class}}" style="border: 1px solid black; background-color: #ccc;">
+//   Lorem ipsum
+// </div>
+//
+// Weight: 2
+//
+// Styleguide Utilities - Spacings - Paddings
+
+@include strat-spacing('padding', 'padding');

@@ -1,0 +1,8 @@
+{
+  "source": "src/sass",
+  "css": [
+    "../dist/style.css"
+  ],
+  "js": [],
+  "title": "Macho"
+}

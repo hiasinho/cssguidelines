@@ -1,0 +1,24 @@
+// Core
+//
+// This core file sets up Macho's most important setup variables. They
+// underpin a lot of how the framework functions and should be modified and
+// preconfigured with caution.
+//
+// Weight: 1
+//
+// Styleguide Settings - Core
+
+$strat-font-size:    16px !default;
+$strat-line-height:  24px !default;
+
+$spacing-unit: round($strat-line-height) !default;
+
+$spacing-unit-factor-tiny:   0.25 !default;
+$spacing-unit-factor-small:  0.5  !default;
+$spacing-unit-factor-large:  2    !default;
+$spacing-unit-factor-huge:   4    !default;
+
+$spacing-unit-tiny:  round($spacing-unit * $spacing-unit-factor-tiny);
+$spacing-unit-small: round($spacing-unit * $spacing-unit-factor-small);
+$spacing-unit-large: round($spacing-unit * $spacing-unit-factor-large);
+$spacing-unit-huge:  round($spacing-unit * $spacing-unit-factor-huge);

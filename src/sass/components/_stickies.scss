@@ -1,0 +1,41 @@
+// Stickies
+//
+// .c-sticky--yellow - Yellow Sticky
+// .c-sticky--green - Green Sticky
+// .c-sticky--red - Red Sticky
+//
+// Markup:
+// <div class="c-sticky {{modifier_class}}">
+//   This is some text within a sticky note
+// </div>
+//
+// Weight: 3
+//
+// Styleguide Components - Stickies
+
+.c-sticky {
+  padding: $spacing-unit;
+  background-color: #eee;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 $spacing-unit $spacing-unit 0;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.2) #fff;
+  }
+}
+
+.c-sticky--yellow {
+  background-color: yellow;
+}
+
+.c-sticky--green {
+  background-color: lighten(green, 50%);
+}
+
+.c-sticky--red {
+  background-color: lighten(red, 30%);
+}
